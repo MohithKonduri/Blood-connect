@@ -1,11 +1,19 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Inter, Roboto_Mono } from "next/font/google";
+
+const _geist = Inter({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+});
+
+const _geistMono = Roboto_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+});
+
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "NSS BloodConnect - Blood Donor Platform",
