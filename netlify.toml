@@ -1,0 +1,24 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+  functions = "netlify/functions"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+# Optional: fallback for client-side routes if you link directly to nested paths
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/dashboard"
+  status = 200
+
+[[redirects]]
+  from = "/dashboard/*"
+  to = "/dashboard"
+  status = 200
+
+
